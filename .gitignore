@@ -1,0 +1,15 @@
+#intellij
+.idea/
+.bsp/
+
+#sbt
+**/target/
+*.DS_store
+#vim
+*.swp
+
+#local logs
+log/
+
+#ignore bloop build script
+.bloop/

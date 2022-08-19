@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package com.eligolin.schema;
+
+import "validate/validate.proto";
+import "scalapb/scalapb.proto";
+
+option (scalapb.options) = {
+  preserve_unknown_fields: false
+};
+
+message Proc {
+  required string computerName = 1 [(validate.rules).string = {
+    max_len: 255
+  }];
+  optional double appLoadTime = 14[(validate.rules).double = {
+    gte:0, lte: 10000
+  }];
+  optional float cpuUsageAvg = 18 [(validate.rules).float = {
+    gte:0, lte: 100
+  }];
+}
